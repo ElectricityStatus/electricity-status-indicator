@@ -1,38 +1,34 @@
-import Image from "next/image";
-import WorldImg from "../public/Final-ezgif.com-speed 1.png";
-import Button from "./components/Button";
+"use client"
+
+import React from 'react';
+import { Header, HeroContent, ActionButtons, Footer, HeroImage } from './components';
+
 export default function Home() {
+  const actionButtons = [
+    {
+      text: 'Get Started',
+      variant: 'primary' as const,
+      // onClick: () => console.log('Get Started clicked'),
+    },
+    {
+      text: 'Log In',
+      variant: 'outline' as const,
+      // onClick: () => console.log('Log In clicked'),
+      
+    },
+  ];
+
   return (
-    <>
-      <div
-        className="flex flex-col bg-[url('../public/worldImg.png')] border  
-         h-screen bg-cover bg-center w-screen    min-h-screen bg-black text-white"
-      >
-        <nav>
-          <div className="logo flex mt-10 ml-10 items-center gap-2">
-            <Image src="/logo.png" alt="Logo" width={50} height={50} />
-            {/* <h1>LOGO</h1>{" "} */}
-          </div>
-        </nav>
-
-        <main className="  flex mt-56 flex-col   text-start justify-center ">
-          <div className=" pl-[15%]  text-white gap-2.5 flex flex-col">
-            <h1 className="font-bold text-2xl leading-[100%] tracking-[0%]">
-              STOP GUESSING <br />
-              START CHECKING.
-            </h1>
-
-            <p className="text-base font-normal leading-[100%] tracking-[0%]">
-              Real-time electricity updates <br />
-              from your area.
-            </p>
-          </div>
-          <div className="mt-36 flex gap-4 flex-col  justify-center items-center ">
-            <Button variant="primary" fullWidth className="w-[90%]" >Get Started</Button>
-            <Button variant="outline" fullWidth className="w-[90%]">Log In</Button>
-          </div>
+    <div className="flex justify-center items-center h-screen">
+      <div className="flex flex-col max-h-[600px] max-w-[600px] lg:w-[40%] lg:bg-amber-50 lg:bg-none bg-[url('/worldImg.png')] h-screen bg-cover bg-center w-screen min-h-screen bg-black text-white">
+        <Header />
+        <main className="flex mt-56 flex-col text-start justify-center">
+          <HeroContent />
+          <ActionButtons buttons={actionButtons} />
         </main>
+        <Footer />
       </div>
-    </>
+      <HeroImage />
+    </div>
   );
 }
