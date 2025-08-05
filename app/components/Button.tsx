@@ -36,7 +36,7 @@ const Button: React.FC<ButtonProps> = ({
     lg: 'px-6 py-4 text-lg',
   };
 
-  // Only apply full width if explicitly requested, otherwise preserve original responsive behavior
+  
   const widthClass = fullWidth ? 'w-full' : 'w-[90%] lg:w-[70%]';
 
   const combinedClasses = [
