@@ -1,6 +1,5 @@
-
-
 import React from 'react';
+
 import { Header, HeroContent, ActionButtons, Footer, HeroImage } from './components';
 
 export default function Home() {
@@ -8,13 +7,12 @@ export default function Home() {
     {
       text: 'Get Started',
       variant: 'primary' as const,
-      // onClick: () => console.log('Get Started clicked'),
+      href: '/signup',
     },
     {
       text: 'Log In',
       variant: 'outline' as const,
-      // onClick: () => console.log('Log In clicked'),
-      
+      href: '/login',
     },
   ];
 
